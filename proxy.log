@@ -271,3 +271,148 @@ To use with Claude Code:
 ---
 Models: deepseek-v4-flash, deepseek-v4-pro, default
 Mapped to Go models: deepseek-v4-flash, deepseek-v4-pro
+OpenCode Go Proxy (Anthropic API) running on http://localhost:8080
+Using OpenCode Go API key: sk-1LjfnfI5i...
+---
+To use with Claude Code:
+  export ANTHROPIC_BASE_URL=http://localhost:8080
+  export ANTHROPIC_API_KEY=any-value
+  claude
+---
+Models: deepseek-v4-flash, deepseek-v4-pro, default
+Mapped to Go models: deepseek-v4-flash, deepseek-v4-pro
+[12:57:49][u8il] POST /v1/messages
+[12:57:49][u8il] model=deepseek-v4-flash stream=true messages=31 tools=60
+[TOOL] {"delta":{"tool_calls":[{"index":0,"id":"call_00_E73vd0xhYCmYTlAnHoKOzsHK","type":"function","function":{"name":"mcp__browsermcp__browser_snapshot","arguments":""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"{}"}}]},"finish_reason":null}
+[TOOL] {"delta":{"content":"","reasoning_content":null},"finish_reason":"tool_calls"}
+[12:57:52][fqbi] POST /v1/messages/count_tokens
+[12:57:52][l8im] POST /v1/messages
+[12:57:52][l8im] model=deepseek-v4-flash stream=true messages=33 tools=60
+[TOOL] {"delta":{"tool_calls":[{"index":0,"id":"call_00_c0zIr9VHA7M6HsLefOJok01K","type":"function","function":{"name":"Bash","arguments":""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"{"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"command"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":": "}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"g"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"rep"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" -"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"i"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" \\\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"start"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" a"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" post"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\\|"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"begin"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" a"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" post"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\\|"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"Open"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\\|"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"Share"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" something"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\\|"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"what"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":".*"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"want"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":".*"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"talk"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\\|"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"write"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\\|"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"post"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":".*"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"click"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\\|"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"com"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"poser"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" \\\"/"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"Users"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"/the"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"mac"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"store"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"/."}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"cl"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"aude"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"/pro"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"jects"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"/-"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"Users"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"-the"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"mac"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"store"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"/f"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"59"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"d"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"53"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"e"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"3"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"-"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"1"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"a"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"1"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"e"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"-"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"446"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"0"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"-"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"95"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"cf"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"-"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"2"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"d"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"ac"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"d"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"754"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"e"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"92"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"f"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"/t"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"ool"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"-res"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"ults"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"/c"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"all"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"_"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"00"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"_E"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"73"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"vd"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"0"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"xh"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"YC"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"m"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"YT"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"l"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"An"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"Ho"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"KO"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"zs"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"HK"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":".json"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\\\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" |"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" head"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" -"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"5"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":", "}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"description"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":": "}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"Search"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" for"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" post"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" button"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" in"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":" snapshot"}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"\""}}]},"finish_reason":null}
+[TOOL] {"delta":{"tool_calls":[{"index":0,"function":{"arguments":"}"}}]},"finish_reason":null}
+[TOOL] {"delta":{"content":"","reasoning_content":null},"finish_reason":"tool_calls"}
+[12:57:56][wpbw] POST /v1/messages
+[12:57:56][wpbw] model=deepseek-v4-flash stream=true messages=35 tools=60

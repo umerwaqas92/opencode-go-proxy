@@ -245,9 +245,7 @@ function streamGo(body, res, originalModelName) {
           const parsed = JSON.parse(jsonStr);
           const delta = parsed.choices?.[0]?.delta || {};
           const finishReason = parsed.choices?.[0]?.finish_reason;
-          if (delta.tool_calls || (typeof delta.content === 'string' && delta.content.includes('tool_use')) || finishReason === 'tool_calls') {
-            console.log(`[TOOL]`, JSON.stringify({ delta, finish_reason: finishReason }).slice(0, 500));
-          }
+          console.log(`[CHUNK]`, JSON.stringify({ delta, finish_reason: finishReason, contentBuf: contentBuf.slice(-200) }).slice(0, 300));
 
           // Reasoning content
           if (delta.reasoning_content) {
