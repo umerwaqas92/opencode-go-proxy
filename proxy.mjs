@@ -90,7 +90,7 @@ function anthropicToOpenAI(body) {
 function openAIToAnthropic(resp, originalModel) {
   const choice = (resp.choices || [])[0] || {};
   const msg = choice.message || {};
-  const content = msg.content || '';
+  let content = msg.content || '';
   const toolCalls = msg.tool_calls || [];
   const reasoning = msg.reasoning_content || msg.reasoning || null;
 
@@ -98,6 +98,18 @@ function openAIToAnthropic(resp, originalModel) {
 
   if (reasoning) {
     anthroContent.push({ type: 'thinking', thinking: reasoning, signature: '' });
+  }
+
+  // If content looks like tool_use JSON, parse it
+  if (content && (choice.finish_reason === 'tool_calls' || content.trimStart().startsWith('{"type":"tool_use"'))) {
+    try {
+      const parsed = JSON.parse(content.trim());
+      const tcs = Array.isArray(parsed) ? parsed : [parsed];
+      for (const tu of tcs) {
+        anthroContent.push({ type: 'tool_use', id: tu.id, name: tu.name, input: tu.input || {} });
+      }
+      content = '';
+    } catch {}
   }
 
   if (content) {
