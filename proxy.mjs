@@ -15,8 +15,12 @@ const ANTHROPIC_MODELS = Object.keys(MODEL_MAP).filter(k => k !== 'default').map
   id, created: 1745880000, owned_by: 'opencode-go',
 }));
 
+function cleanModel(name) {
+  return name.replace(/\[\w+\]/g, '');
+}
+
 function mapModel(anthropicModel) {
-  return MODEL_MAP[anthropicModel] || MODEL_MAP['default'];
+  return MODEL_MAP[cleanModel(anthropicModel)] || MODEL_MAP['default'];
 }
 
 function anthropicToOpenAI(body) {
@@ -161,7 +165,7 @@ function requestGo(options, body) {
   });
 }
 
-function streamGo(body, res) {
+function streamGo(body, res, originalModelName) {
   const data = JSON.stringify({ ...body, stream: true });
   const goReq = https.request({
     hostname: GO_BASE,
@@ -175,7 +179,7 @@ function streamGo(body, res) {
     },
   });
 
-  const originalModel = body.model; // original anthropic model name
+  const originalModel = originalModelName || body.model;
   let buffer = '';
   let messageId = 'msg_' + Date.now();
   let hasContent = false;
@@ -403,7 +407,7 @@ const server = http.createServer((req, res) => {
         const openAIReq = anthropicToOpenAI(anthropicReq);
 
         if (anthropicReq.stream) {
-          streamGo(openAIReq, res);
+          streamGo(openAIReq, res, anthropicReq.model);
           return;
         }
 

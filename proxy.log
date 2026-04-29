@@ -107,3 +107,22 @@ Models: claude-sonnet-4-20250514, claude-sonnet-4, claude-3-5-sonnet-20241022, c
 Mapped to Go models: deepseek-v4-flash, deepseek-v4-pro
 [12:32:56][2frr] POST /v1/messages
 [12:32:56][2frr] model=claude-sonnet-4 stream=true messages=15 tools=60
+OpenCode Go Proxy (Anthropic API) running on http://localhost:8080
+Using OpenCode Go API key: sk-1LjfnfI5i...
+---
+To use with Claude Code:
+  export ANTHROPIC_BASE_URL=http://localhost:8080
+  export ANTHROPIC_API_KEY=any-value
+  claude
+---
+Models: deepseek-v4-flash, deepseek-v4-pro, default
+Mapped to Go models: deepseek-v4-flash, deepseek-v4-pro
+[12:37:26][ab2j] HEAD /
+[12:37:30][eer1] POST /v1/messages
+[12:37:30][eer1] model=deepseek-v4-flash stream=true messages=1 tools=40
+[12:37:54][f8p6] POST /v1/messages
+[12:37:54][f8p6] model=deepseek-v4-flash stream=true messages=1 tools=0
+[12:37:54][qm0c] POST /v1/messages
+[12:37:54][qm0c] model=deepseek-v4-flash stream=true messages=3 tools=60
+[12:38:27][iciq] POST /v1/messages
+[12:38:27][iciq] model=deepseek-v4-pro stream=true messages=5 tools=60
