@@ -141,3 +141,38 @@ Mapped to Go models: deepseek-v4-flash, deepseek-v4-pro
 [12:42:00][sguo] HEAD /
 [12:42:04][4rtk] POST /v1/messages
 [12:42:04][4rtk] model=deepseek-v4-flash stream=true messages=1 tools=46
+[12:43:21][p5nl] HEAD /
+[12:43:24][nhtr] POST /v1/messages
+[12:43:25][nhtr] model=deepseek-v4-flash stream=true messages=1 tools=40
+[12:43:30][kl8a] POST /v1/messages
+[12:43:30][kl8a] model=deepseek-v4-flash stream=true messages=1 tools=0
+[12:43:30][0cem] POST /v1/messages
+[12:43:30][0cem] model=deepseek-v4-flash stream=true messages=3 tools=60
+[12:44:56][s70f] HEAD /
+[12:44:56][wx8u] HEAD /
+[12:44:59][o0xs] POST /v1/messages
+[12:44:59][o0xs] model=deepseek-v4-flash stream=true messages=1 tools=55
+[12:45:05][kxh7] POST /v1/messages
+[12:45:05][kxh7] model=deepseek-v4-flash stream=true messages=1 tools=0
+[12:45:05][phn1] POST /v1/messages
+[12:45:05][phn1] model=deepseek-v4-flash stream=true messages=3 tools=55
+[12:46:12][bi4o] HEAD /
+[12:46:31][9xxj] POST /v1/messages
+[12:46:31][9xxj] model=deepseek-v4-flash stream=true messages=1 tools=0
+[12:46:31][voic] POST /v1/messages
+[12:46:31][voic] model=deepseek-v4-flash stream=true messages=1 tools=60
+[12:46:36][xk1i] POST /v1/messages
+[12:46:36][xk1i] model=deepseek-v4-flash stream=true messages=3 tools=60
+[12:46:42][xa7d] POST /v1/messages
+[12:46:42][xa7d] model=deepseek-v4-flash stream=true messages=5 tools=60
+[12:46:45][0u9i] POST /v1/messages/count_tokens
+[12:46:45][3kdx] POST /v1/messages
+[12:46:45][3kdx] model=deepseek-v4-flash stream=true messages=7 tools=60
+[12:47:06][8mfh] POST /v1/messages
+[12:47:06][8mfh] model=deepseek-v4-flash stream=true messages=9 tools=60
+[12:47:13][4shm] POST /v1/messages
+[12:47:13][4shm] model=deepseek-v4-flash stream=true messages=11 tools=60
+[12:47:18][7744] POST /v1/messages
+[12:47:18][7744] model=deepseek-v4-flash stream=true messages=13 tools=60
+[12:47:49][btmn] POST /v1/messages
+[12:47:49][btmn] model=deepseek-v4-flash stream=true messages=5 tools=60

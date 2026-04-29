@@ -181,11 +181,13 @@ function streamGo(body, res, originalModelName) {
 
   const originalModel = originalModelName || body.model;
   let buffer = '';
+  let textBuf = '';
   let messageId = 'msg_' + Date.now();
   let hasContent = false;
   let hasThinking = false;
   let contentIndex = 0;
   let currentToolCall = null;
+  let pendingToolCallJson = '';
 
   function sendSSE(event, data) {
     res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
@@ -252,34 +254,38 @@ function streamGo(body, res, originalModelName) {
 
           // Text content
           if (delta.content) {
-            if (!hasContent && !hasThinking) {
-              hasContent = true;
-              sendSSE('content_block_start', {
-                type: 'content_block_start',
-                index: contentIndex,
-                content_block: { type: 'text', text: '' },
-              });
-            } else if (!hasContent && hasThinking) {
-              // Close thinking block, start text
-              sendSSE('content_block_stop', {
-                type: 'content_block_stop',
-                index: contentIndex,
-              });
-              contentIndex++;
-              hasContent = true;
-              hasThinking = false;
-              sendSSE('content_block_start', {
-                type: 'content_block_start',
-                index: contentIndex,
-                content_block: { type: 'text', text: '' },
-              });
-            }
-            if (hasContent) {
-              sendSSE('content_block_delta', {
-                type: 'content_block_delta',
-                index: contentIndex,
-                delta: { type: 'text_delta', text: delta.content },
-              });
+            if (delta.content.trimStart().startsWith('{"type":"tool_use"')) {
+              pendingToolCallJson += delta.content;
+            } else {
+              if (!hasContent && !hasThinking) {
+                hasContent = true;
+                sendSSE('content_block_start', {
+                  type: 'content_block_start',
+                  index: contentIndex,
+                  content_block: { type: 'text', text: '' },
+                });
+              } else if (!hasContent && hasThinking) {
+                sendSSE('content_block_stop', {
+                  type: 'content_block_stop',
+                  index: contentIndex,
+                });
+                contentIndex++;
+                hasContent = true;
+                hasThinking = false;
+                sendSSE('content_block_start', {
+                  type: 'content_block_start',
+                  index: contentIndex,
+                  content_block: { type: 'text', text: '' },
+                });
+              }
+              if (hasContent) {
+                textBuf += delta.content;
+                sendSSE('content_block_delta', {
+                  type: 'content_block_delta',
+                  index: contentIndex,
+                  delta: { type: 'text_delta', text: delta.content },
+                });
+              }
             }
           }
 
@@ -318,6 +324,29 @@ function streamGo(body, res, originalModelName) {
 
           // Finish
           if (finishReason) {
+            // Handle tool calls sent as JSON text (not structured tool_calls)
+            if (finishReason === 'tool_calls' && !currentToolCall && pendingToolCallJson) {
+              if (hasContent) {
+                sendSSE('content_block_stop', { type: 'content_block_stop', index: contentIndex });
+                hasContent = false;
+              }
+              try {
+                const toolUse = JSON.parse(pendingToolCallJson);
+                const tcs = Array.isArray(toolUse) ? toolUse : [toolUse];
+                for (const tu of tcs) {
+                  if (hasContent || hasThinking) contentIndex++;
+                  hasContent = false; hasThinking = false;
+                  sendSSE('content_block_start', {
+                    type: 'content_block_start',
+                    index: contentIndex,
+                    content_block: { type: 'tool_use', id: tu.id, name: tu.name, input: tu.input || {} },
+                  });
+                  sendSSE('content_block_stop', { type: 'content_block_stop', index: contentIndex });
+                  contentIndex++;
+                }
+              } catch {}
+            }
+
             if (currentToolCall) {
               sendSSE('content_block_stop', { type: 'content_block_stop', index: contentIndex });
             }
