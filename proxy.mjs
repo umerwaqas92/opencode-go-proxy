@@ -1,31 +1,19 @@
 import http from 'http';
 import https from 'https';
+import fs from 'fs';
 
-const GO_API_KEY = process.env.OPENCODE_GO_KEY || 'sk-1LjfnfI5iVPekprTJaqqSFy3sYUpyQnYLp2U7hJDGGvJ4Ep71ZY8ilNSLwJPelxX';
+const config = JSON.parse(fs.readFileSync(new URL('config.json', import.meta.url), 'utf8'));
+
+const GO_API_KEY = process.env.OPENCODE_GO_KEY || config.api_key;
 const GO_BASE = 'opencode.ai';
 const GO_PATH = '/zen/go/v1';
-const PORT = parseInt(process.env.PORT || '8080');
+const PORT = parseInt(process.env.PORT || config.port || '8080');
 
-const MODEL_MAP = {
-  'claude-sonnet-4-20250514': 'deepseek-v4-flash',
-  'claude-sonnet-4': 'deepseek-v4-flash',
-  'claude-3-5-sonnet-20241022': 'deepseek-v4-flash',
-  'claude-3-haiku-20240307': 'deepseek-v4-flash',
-  'claude-opus-4-20250514': 'deepseek-v4-pro',
-  'claude-opus-4': 'deepseek-v4-pro',
-  'claude-thinking': 'deepseek-v4-pro',
-  'default': 'deepseek-v4-flash',
-};
+const MODEL_MAP = { ...config.model_mapping, default: config.default_model || 'deepseek-v4-flash' };
 
-const ANTHROPIC_MODELS = [
-  { id: 'claude-sonnet-4-20250514', created: 1745880000, owned_by: 'opencode-go' },
-  { id: 'claude-sonnet-4', created: 1745880000, owned_by: 'opencode-go' },
-  { id: 'claude-3-5-sonnet-20241022', created: 1745880000, owned_by: 'opencode-go' },
-  { id: 'claude-3-haiku-20240307', created: 1745880000, owned_by: 'opencode-go' },
-  { id: 'claude-opus-4-20250514', created: 1745880000, owned_by: 'opencode-go' },
-  { id: 'claude-opus-4', created: 1745880000, owned_by: 'opencode-go' },
-  { id: 'claude-thinking', created: 1745880000, owned_by: 'opencode-go' },
-];
+const ANTHROPIC_MODELS = Object.keys(MODEL_MAP).filter(k => k !== 'default').map(id => ({
+  id, created: 1745880000, owned_by: 'opencode-go',
+}));
 
 function mapModel(anthropicModel) {
   return MODEL_MAP[anthropicModel] || MODEL_MAP['default'];
