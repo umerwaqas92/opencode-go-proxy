@@ -416,3 +416,5 @@ Mapped to Go models: deepseek-v4-flash, deepseek-v4-pro
 [TOOL] {"delta":{"content":"","reasoning_content":null},"finish_reason":"tool_calls"}
 [12:57:56][wpbw] POST /v1/messages
 [12:57:56][wpbw] model=deepseek-v4-flash stream=true messages=35 tools=60
+OpenCode Go Proxy running on http://localhost:8080
+Models: deepseek-v4-flash, deepseek-v4-pro
