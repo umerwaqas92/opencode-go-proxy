@@ -176,3 +176,76 @@ Mapped to Go models: deepseek-v4-flash, deepseek-v4-pro
 [12:47:18][7744] model=deepseek-v4-flash stream=true messages=13 tools=60
 [12:47:49][btmn] POST /v1/messages
 [12:47:49][btmn] model=deepseek-v4-flash stream=true messages=5 tools=60
+OpenCode Go Proxy (Anthropic API) running on http://localhost:8080
+Using OpenCode Go API key: sk-1LjfnfI5i...
+---
+To use with Claude Code:
+  export ANTHROPIC_BASE_URL=http://localhost:8080
+  export ANTHROPIC_API_KEY=any-value
+  claude
+---
+Models: deepseek-v4-flash, deepseek-v4-pro, default
+Mapped to Go models: deepseek-v4-flash, deepseek-v4-pro
+[12:48:43][3in2] POST /v1/messages
+[12:48:43][3in2] model=deepseek-v4-flash stream=true messages=1 tools=60
+[12:48:48][ip1t] POST /v1/messages
+[12:48:48][ip1t] model=deepseek-v4-flash stream=true messages=3 tools=60
+[12:48:52][5enn] POST /v1/messages
+[12:48:52][5enn] model=deepseek-v4-flash stream=true messages=5 tools=60
+[12:48:57][bbq2] POST /v1/messages
+[12:48:57][bbq2] model=deepseek-v4-flash stream=true messages=7 tools=60
+[12:49:01][52jt] POST /v1/messages
+[12:49:01][52jt] model=deepseek-v4-flash stream=true messages=9 tools=60
+[12:49:30][wl3o] POST /v1/messages
+[12:49:30][wl3o] model=deepseek-v4-flash stream=true messages=11 tools=60
+[12:49:36][poyx] POST /v1/messages
+[12:49:36][poyx] model=deepseek-v4-flash stream=true messages=13 tools=60
+[12:49:42][omr1] POST /v1/messages
+[12:49:42][omr1] model=deepseek-v4-flash stream=true messages=15 tools=60
+[12:49:45][nstq] POST /v1/messages
+[12:49:45][nstq] model=deepseek-v4-flash stream=true messages=17 tools=60
+[12:49:48][227j] POST /v1/messages
+[12:49:48][227j] model=deepseek-v4-flash stream=true messages=19 tools=60
+[12:50:26][rspw] POST /v1/messages
+[12:50:26][rspw] model=deepseek-v4-flash stream=true messages=21 tools=60
+[12:51:01][ze7j] HEAD /
+[12:51:32][310c] POST /v1/messages
+[12:51:32][310c] model=deepseek-v4-flash stream=true messages=1 tools=0
+[12:51:32][us14] POST /v1/messages
+[12:51:32][us14] model=deepseek-v4-flash stream=true messages=1 tools=60
+[12:51:42][zj6x] POST /v1/messages
+[12:51:42][zj6x] model=deepseek-v4-flash stream=true messages=3 tools=60
+[12:51:58][jo8p] POST /v1/messages
+[12:51:58][jo8p] model=deepseek-v4-flash stream=true messages=1 tools=0
+[12:51:58][lckt] POST /v1/messages
+[12:51:58][lckt] model=deepseek-v4-flash stream=true messages=5 tools=60
+[12:52:08][o68u] POST /v1/messages
+[12:52:08][o68u] model=deepseek-v4-flash stream=true messages=7 tools=60
+[12:52:12][e17g] POST /v1/messages
+[12:52:12][e17g] model=deepseek-v4-flash stream=true messages=9 tools=60
+[12:52:15][lk82] POST /v1/messages/count_tokens
+[12:52:15][cyqt] POST /v1/messages
+[12:52:15][cyqt] model=deepseek-v4-flash stream=true messages=11 tools=60
+[12:52:21][dkur] POST /v1/messages/count_tokens
+[12:52:21][dr86] POST /v1/messages
+[12:52:21][dr86] model=deepseek-v4-flash stream=true messages=13 tools=60
+[12:52:26][38pg] POST /v1/messages/count_tokens
+[12:52:26][n9tn] POST /v1/messages
+[12:52:26][n9tn] model=deepseek-v4-flash stream=true messages=15 tools=60
+[12:52:55][z6at] POST /v1/messages
+[12:52:55][z6at] model=deepseek-v4-flash stream=true messages=17 tools=60
+[12:53:00][k8b3] POST /v1/messages/count_tokens
+[12:53:00][iojj] POST /v1/messages
+[12:53:00][iojj] model=deepseek-v4-flash stream=true messages=19 tools=60
+[12:53:05][6q4n] POST /v1/messages
+[12:53:05][6q4n] model=deepseek-v4-flash stream=true messages=21 tools=60
+[12:53:09][nkdy] POST /v1/messages
+[12:53:09][nkdy] model=deepseek-v4-flash stream=true messages=23 tools=60
+[12:53:14][wt3a] POST /v1/messages
+[12:53:14][wt3a] model=deepseek-v4-flash stream=true messages=25 tools=60
+[12:53:17][d0st] POST /v1/messages
+[12:53:17][d0st] model=deepseek-v4-flash stream=true messages=27 tools=60
+[12:53:38][00wz] POST /v1/messages
+[12:53:38][00wz] model=deepseek-v4-flash stream=true messages=23 tools=60
+[12:53:41][4l7a] POST /v1/messages
+[12:53:41][4l7a] model=deepseek-v4-flash stream=true messages=23 tools=60
