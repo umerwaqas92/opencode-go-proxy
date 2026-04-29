@@ -2,14 +2,8 @@
   "port": 8080,
   "api_key": "sk-1LjfnfI5iVPekprTJaqqSFy3sYUpyQnYLp2U7hJDGGvJ4Ep71ZY8ilNSLwJPelxX",
   "model_mapping": {
-    "claude-sonnet-4-20250514": "deepseek-v4-flash",
-    "claude-sonnet-4": "deepseek-v4-flash",
-    "claude-3-5-sonnet-20241022": "deepseek-v4-flash",
-    "claude-3-haiku-20240307": "deepseek-v4-flash",
-    "claude-opus-4-20250514": "deepseek-v4-pro",
-    "claude-opus-4": "deepseek-v4-pro",
-    "claude-thinking": "deepseek-v4-pro",
-    "claude-3-5-haiku-20241022": "deepseek-v4-flash"
+    "deepseek-v4-flash": "deepseek-v4-flash",
+    "deepseek-v4-pro": "deepseek-v4-pro"
   },
   "default_model": "deepseek-v4-flash"
 }
